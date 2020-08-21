@@ -81,18 +81,4 @@
 
 - belongs_to :purchase
 
-## cards テーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| card_number   | integer    | null: false                    |
-| exp_month     | date       | null: false                    |
-| exp_year      | date       | null: false                    |
-| security_code | integer    | null: false                    |
-| purchase_id   | references | null: false, foreign_key: true |
-
-
-
-### Association
-
-- belongs_to purchase
