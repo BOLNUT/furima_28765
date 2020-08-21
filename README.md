@@ -54,16 +54,16 @@
 
 ## purchases テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| item_id | references | null: false, foreign_key: true |
-
+| Column  | Type    | Options     |
+| ------- | ------- | ----------- |
+| item_id | integer | null: false |
+| user_id | integer | null: false |
 
 ### Association
 
 - has_one :receiver
-- has_one :card
 - belongs_to :item
+- belongs_to :user
 
 ## receivers テーブル
 
