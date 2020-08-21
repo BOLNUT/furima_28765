@@ -23,13 +23,13 @@
 
 ## items テーブル
 
-| Column             | Type    | Options     |
-| ------------------ | ------- | ----------- |
-| image              | string  | null: false |
-| name               | string  | null: false |
-| text               | text    | null: false |
-| price              | integer | null: false |
-| user_id            | integer | null: false |
+| Column             | Type    | Options                        |
+| ------------------ | ------- | ------------------------------ |
+| image              | string  | null: false                    |
+| name               | string  | null: false                    |
+| text               | text    | null: false                    |
+| price              | integer | null: false                    |
+| user_id            | integer | null: false, foreign_key: true |
 
 ### Association
 
