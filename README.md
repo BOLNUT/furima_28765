@@ -28,11 +28,6 @@
 | image              | string    | null: false                    |
 | name               | string    | null: false                    |
 | text               | text      | null: false                    |
-| category           | string    | null: false                    |
-| item_status        | string    | null: false                    |
-| delivery_fee       | string    | null: false                    |
-| shipping_origin    | string    | null: false                    |
-| delivery_time      | string    | null: false                    |
 | price              | integer   | null: false                    |
 | user_id            | references| null: false, foreign_key: true |
 
