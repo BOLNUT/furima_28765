@@ -67,14 +67,16 @@
 
 ## receivers テーブル
 
-| Column       | Type    | Options                        |
-| ------------ | ------- | ------------------------------ |
-| postcode     | string  | null: false                    |
-| city         | text    | null: false                    |
-| block        | string  | null: false                    |
-| building     | string  |                                |
-| phone_number | string  | null: false                    |
-| purchase_id  | integer | null: false, foreign_key: true |
+| Column        | Type    | Options                        |
+| ------------- | ------- | ------------------------------ |
+| postcode      | string  | null: false                    |
+| prefecture_id | integer | null: false, foreign_key: true |
+| city          | text    | null: false                    |
+| block         | string  | null: false                    |
+| building      | string  |                                |
+| phone_number  | string  | null: false                    |
+| purchase_id   | integer | null: false, foreign_key: true |
+
 
 
 ### Association
