@@ -18,7 +18,7 @@
 
 - has_many :items
 - has_many :comments
-- has_one :purchase
+- has_many :purchase
 
 
 ## items テーブル
@@ -34,6 +34,7 @@
 | delivery_fee_id | integer | null: false, foreign_key: true |
 | prefecture_id   | integer | null: false, foreign_key: true |
 | time_id         | integer | null: false, foreign_key: true |
+
 
 ### Association
 
