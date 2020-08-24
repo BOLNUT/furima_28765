@@ -29,11 +29,11 @@
 | name            | string  | null: false                    |
 | text            | text    | null: false                    |
 | price           | integer | null: false                    |
-| category_id     | integer | null: false, foreign_key: true |
-| item_status_id  | integer | null: false, foreign_key: true |
-| delivery_fee_id | integer | null: false, foreign_key: true |
-| prefecture_id   | integer | null: false, foreign_key: true |
-| time_id         | integer | null: false, foreign_key: true |
+| category_id     | integer | null: false                    |
+| item_status_id  | integer | null: false                    |
+| delivery_fee_id | integer | null: false                    |
+| prefecture_id   | integer | null: false                    |
+| time_id         | integer | null: false                    |
 | user_id         | integer | null: false, foreign_key: true |
 
 
@@ -76,7 +76,7 @@
 | Column        | Type    | Options                        |
 | ------------- | ------- | ------------------------------ |
 | postcode      | string  | null: false                    |
-| prefecture_id | integer | null: false, foreign_key: true |
+| prefecture_id | integer | null: false,                   |
 | city          | text    | null: false                    |
 | block         | string  | null: false                    |
 | building      | string  |                                |
