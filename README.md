@@ -34,6 +34,7 @@
 | delivery_fee_id | integer | null: false, foreign_key: true |
 | prefecture_id   | integer | null: false, foreign_key: true |
 | time_id         | integer | null: false, foreign_key: true |
+| user_id         | integer | null: false, foreign_key: true |
 
 
 ### Association
