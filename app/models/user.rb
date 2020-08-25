@@ -20,7 +20,7 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, format: { with: VALID_EMAIL_REGEX }
   validates :email, uniqueness: true # 一意性制約
-  # validates :email, presence: true, inclusion: { in: ["@"] } # "@"を含めているかを確認
+  
   
   # password 入力制限
   VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i # 半角英数字だけを許可する
