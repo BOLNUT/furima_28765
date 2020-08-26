@@ -3,8 +3,8 @@ ja:
    attributes:
      user:
        nick_name: ニックネーム
-       family_name: 性名
-       first_name: 性名
+       family_name: 姓名
+       first_name: 名前
        family_name_kana: 姓名
        first_name_kana: 名前
        birth_date: 生年月日
