@@ -71,10 +71,20 @@ describe User do
         @user.valid?
         expect(@user.errors.full_messages).to include("姓名を入力してください", "姓名は不正な値です")
       end
+      it "family_nameは、全角（漢字・ひらがな・カタカナ）で入力しないと登録できない" do
+        @user.family_name = 'aaa'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("姓名は不正な値です")
+      end
       it "first_nameが空だと登録できない" do
         @user.first_name = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("名前を入力してください", "名前は不正な値です")
+      end
+      it "first_nameは、全角（漢字・ひらがな・カタカナ）で入力しないと登録できない" do
+        @user.first_name = 'aaa'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("名前は不正な値です")
       end
       it "family_name_kanaが空だと登録できない" do
         @user.family_name_kana = ''
