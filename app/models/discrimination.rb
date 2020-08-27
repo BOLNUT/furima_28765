@@ -1,0 +1,2 @@
+class Discrimination < ApplicationRecord
+end
