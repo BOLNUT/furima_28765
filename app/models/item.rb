@@ -1,4 +1,10 @@
 class Item < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :category
+  belongs_to_active_hash :item_status
+  belongs_to_active_hash :delivery_fee
+  belongs_to_active_hash :prefecture
+  belongs_to_active_hash :delivery_day
   # 空文字制限(入力必須)
   with_options presence: true do
     validates :image
@@ -7,9 +13,9 @@ class Item < ApplicationRecord
     validates :price
     validates :category_id
     validates :item_status_id
-    validates :delivery_id
+    validates :delivery_fee_id
     validates :prefecture_id
-    validates :time_id
+    validates :delivery_day_id
     validates :user_id
   end
 
