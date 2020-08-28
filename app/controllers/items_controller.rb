@@ -6,14 +6,18 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+
+    #new active_hash使用
     @discrimination = Discrimination.new
     @status = Status.new
+    @fee = Fee.new
+    #//new active_hash使用
   end
   
   def create
     Item.create(item_params)
     
-    #active_hash使用
+    #create active_hash使用
     @discrimination = Discrimination.new(discrimination_params)
     if @discrimination.save
       redirect_to root_path
@@ -27,16 +31,23 @@ class ItemsController < ApplicationController
     else
       render :new
     end
-    #//active_hash使用
+
+    @fee = Fee.new(fee_params)
+    if @fee.save
+      redirect_to root_path
+    else
+      render :new
+    end
+    #//create active_hash使用
   end
    
    private
     def item_params
       params.require(:items).permit(
         :image, :name, :text, :price, :category_id, :item_status_id, :delivery_fee_id, :prefecture_id, :time_id, :user_id
-      ) #active_hash使用               :category_id, :item_status_id, :delivery_fee_id, :prefecture_id, :time_id  外部キー:user_id
+      )
     end
-
+    #params active_hash使用
     def discrimination_params
       params.require(:discrimination).permit(:title,:text,:category_id)
     end
@@ -44,5 +55,10 @@ class ItemsController < ApplicationController
     def status_params
       params.require(:status).permit(:title,:text,:item_status_id)
     end
+
+    def fee_params
+      params.require(:fee).permit(:title,:text,:delivery_fee_id)
+    end
+    #//params active_hash使用
 end
 
