@@ -7,16 +7,27 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @discrimination = Discrimination.new
+    @status = Status.new
   end
   
   def create
-    Item.create(item_params) #モデル名.create(引数名)
+    Item.create(item_params)
+    
+    #active_hash使用
     @discrimination = Discrimination.new(discrimination_params)
     if @discrimination.save
       redirect_to root_path
     else
       render :new
     end
+
+    @status = Status.new(status_params)
+    if @status.save
+      redirect_to root_path
+    else
+      render :new
+    end
+    #//active_hash使用
   end
    
    private
@@ -28,6 +39,10 @@ class ItemsController < ApplicationController
 
     def discrimination_params
       params.require(:discrimination).permit(:title,:text,:category_id)
+    end
+
+    def status_params
+      params.require(:status).permit(:title,:text,:item_status_id)
     end
 end
 
