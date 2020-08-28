@@ -44,7 +44,7 @@ class ItemsController < ApplicationController
    private
     def item_params
       params.require(:items).permit(
-        :image, :name, :text, :price, :category_id, :item_status_id, :delivery_fee_id, :prefecture_id, :time_id, :user_id
+        :image, :name, :text, :price, :category_id, :item_status_id, :delivery_fee_id, :prefecture_id, :delivery_day_id, :user_id
       )
     end
     #params active_hash使用
