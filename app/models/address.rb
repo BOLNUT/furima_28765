@@ -6,5 +6,5 @@ class Address < ApplicationRecord
   validates :title, :text, :prefecture, presence: true
 
   #ジャンルの選択が「--」の時は保存できない
-  validates :prefecture_id, numericality: { other_than: 1 } 
+  validates :prefecture_id, numericality: { other_than: 0 } 
 end
