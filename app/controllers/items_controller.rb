@@ -6,8 +6,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @discriminations = Discrimination.order("created_at DESC")
-    @discrimination = Article.new
+    @discrimination = Discrimination.new
   end
   
   def create
