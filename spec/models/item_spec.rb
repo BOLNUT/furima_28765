@@ -12,22 +12,22 @@ RSpec.describe Item, type: :model do
       end
     end
     context "商品情報が保存できない場合" do
-      it "画像がないとツイートは保存できない" do
+      it "画像がないと商品情報は保存できない" do
         @item.image = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("商品画像を入力してください")
       end
-      it "商品名がないとツイートは保存できない" do
+      it "商品名がないと商品情報は保存できない" do
         @item.name = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("商品名を入力してください")
       end
-      it "説明文がないとツイートは保存できない" do
+      it "説明文がないと商品情報は保存できない" do
         @item.text = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("商品の説明文を入力してください")
       end
-      it "カテゴリーが未選択だとツイートは保存できない" do
+      it "カテゴリーが未選択だと商品情報は保存できない" do
         @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("カテゴリーは1以外の値にしてください")
@@ -67,7 +67,7 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include()
       end     
-      it "ユーザーが紐付いていないとツイートは保存できない" do
+      it "ユーザーが紐付いていないと商品情報は保存できない" do
         @item.user = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Userを入力してください")
