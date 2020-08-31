@@ -5,14 +5,14 @@ RSpec.describe Item, type: :model do
     @item = FactoryBot.build(:tweet)
   end
 
-  describe 'ツイートの保存' do
-    context "ツイートが保存できる場合" do
+  describe '商品出品の保存' do
+    context "商品情報が保存できる場合" do
       it "画像とテキストがあればツイートは保存される" do
       end
       it "テキストのみあればツイートは保存される" do
       end
     end
-    context "ツイートが保存できない場合" do
+    context "商品情報が保存できない場合" do
       it "テキストがないとツイートは保存できない" do
       end     
       it "ユーザーが紐付いていないとツイートは保存できない" do
