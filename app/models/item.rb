@@ -19,11 +19,20 @@ class Item < ApplicationRecord
     validates :user_id
   end
 
+  with_options numericality: { other_than: 1 } do
+    validates :category_id
+    validates :item_status_id
+    validates :delivery_fee_id
+    validates :prefecture_id
+    validates :delivery_day_id
+  end
+
+
   # price 入力制限
   VALID_PRICE_REGEX = /\A[0-9]+\z/
   validates :price, format: { with: VALID_PRICE_REGEX }                    # 数字のみであるか
   validates :price, :numericality => { :greater_than_or_equal_to => 300 }  # 数字が300以上であるか
-  validates :price, :numericality => { :less_than_or_equal_to => 9999999 } # 数字が9,999,999以下であるか
+  # validates :price, :numericality => { :less_than_or_equal_to => 9999999 } # 数字が9,999,999以下であるか
 
   belongs_to :user
 end
