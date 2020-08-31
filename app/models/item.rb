@@ -16,7 +16,6 @@ class Item < ApplicationRecord
     validates :delivery_fee_id
     validates :prefecture_id
     validates :delivery_day_id
-    validates :user_id
   end
 
   with_options numericality: { other_than: 1 } do
