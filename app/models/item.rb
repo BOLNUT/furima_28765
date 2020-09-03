@@ -36,5 +36,4 @@ class Item < ApplicationRecord
   validates :price, :numericality => { :greater_than_or_equal_to => 300 }  # 数字が300以上であるか
   validates :price, :numericality => { :less_than_or_equal_to => 9999999 } # 数字が9,999,999以下であるか
 
-
 end

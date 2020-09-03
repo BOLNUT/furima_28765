@@ -1,3 +1,4 @@
+<%= link_to item_path(item.id) do %>
 <div class='item-img-content'>
   <%= image_tag item.image, class: "item-img" %>
   <%# 商品が売れていればsold outの表示 %>
@@ -18,3 +19,4 @@
       </div>
   </div>
 </div>
+<% end %>
