@@ -55,11 +55,11 @@ ActiveRecord::Schema.define(version: 2020_09_07_031629) do
   end
 
   create_table "receivers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "postcode", null: false
+    t.string "postcode", default: "", null: false
     t.integer "prefecture_id", null: false
-    t.string "city", null: false
-    t.string "block", null: false
-    t.string "building", null: false
+    t.string "city", default: "", null: false
+    t.string "block", default: "", null: false
+    t.string "building", default: ""
     t.string "phone_number", null: false
     t.integer "purchase_id", null: false
     t.datetime "created_at", precision: 6, null: false
