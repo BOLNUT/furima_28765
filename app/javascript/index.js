@@ -8,4 +8,4 @@ window.addEventListener('load', function(){
     document.getElementById("add-tax-price").innerHTML = String(Fee)
     document.getElementById("profit").innerHTML = String(Profit)
   })
-}) 
+})
