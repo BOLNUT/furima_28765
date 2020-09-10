@@ -26,8 +26,6 @@ const pay = () => {
       exp_month: exp_month,
       exp_year: exp_year,
     };
-    //card 中身確認
-    console.log(card)
 
     Payjp.createToken(card, (status, response) => {
       if (status == 200) {
@@ -41,11 +39,9 @@ const pay = () => {
         document.getElementById("card-exp-year").removeAttribute("name");
         document.getElementById("charge-form").submit();
         document.getElementById("charge-form").reset();
-      }else{
-        console.log("false")
       }
     });
   });
- };
+};
  
- window.addEventListener("load", pay);
+window.addEventListener("load", pay);
