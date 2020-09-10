@@ -6,5 +6,6 @@ FactoryBot.define do
     block         {Faker::Lorem.sentence}
     building      {Faker::Lorem.sentence}
     phone_number  {"01234567890"}
+    token         {Faker::Lorem.sentence}
   end
 end
