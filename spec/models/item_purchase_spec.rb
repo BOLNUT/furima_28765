@@ -10,10 +10,6 @@ RSpec.describe ItemPurchase, type: :model do
       it "全ての情報が入力されていればは保存される" do
         expect(@item_purchase).to be_valid
       end
-      it "建物名が入力されていなくても保存される" do
-        @item_purchase.building = ''
-        expect(@item_purchase).to be_valid
-      end
     end
     context "商品が購入できない場合" do
       it "郵便番号がないと商品は購入できない" do
