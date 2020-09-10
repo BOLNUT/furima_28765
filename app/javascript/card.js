@@ -6,6 +6,7 @@ const pay = () => {
  
     const formResult = document.getElementById("charge-form");
     const formData = new FormData(formResult);
+    
     //FormDataの取得
     const numberInput = document.getElementById("card-number").value
     const cvcInput = document.getElementById("card-cvc").value
