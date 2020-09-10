@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   before_action :set_item, only: [:show, :edit, :destroy, :update]
-  
+  before_action :sold_out_item, only: [:index, :show]
 
   def index
     @items = Item.includes(:user).order("created_at DESC")
@@ -21,7 +21,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @purchase = Purchase.find_by(item_id: params[:id])
   end
 
   def destroy
@@ -53,6 +52,10 @@ class ItemsController < ApplicationController
 
     def set_item
       @item = Item.find(params[:id])
+    end
+
+    def sold_out_item
+      @purchase = Purchase.find_by(item_id: params[:id])
     end
 end
 
