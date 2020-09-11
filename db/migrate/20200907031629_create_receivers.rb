@@ -8,7 +8,7 @@ class CreateReceivers < ActiveRecord::Migration[6.0]
       t.string  :building,      default: ""
       t.string  :phone_number,                null: false
       t.integer :purchase_id,                 null: false, foreign_key: true
-      t.timestamps
+      t.timestamps 
     end
   end
 end
