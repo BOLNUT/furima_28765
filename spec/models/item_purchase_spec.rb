@@ -57,6 +57,11 @@ RSpec.describe ItemPurchase, type: :model do
         @item_purchase.valid?
         expect(@item_purchase.errors.full_messages).to include("Phone numberは不正な値です")
       end
+      it "カードのtokenがないと商品は購入できない" do
+        @item_purchase.token = ''
+        @item_purchase.valid?
+        expect(@item_purchase.errors.full_messages).to include("Tokenを入力してください")
+      end
     end
   end
 end
