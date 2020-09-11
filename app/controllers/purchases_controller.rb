@@ -26,7 +26,7 @@ class PurchasesController < ApplicationController
   end
   
   def item_price
-    Item.find(@purchase.item_id).price
+    @purchase.item.price
   end
 
   def pay_item
