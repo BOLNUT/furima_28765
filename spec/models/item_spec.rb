@@ -12,11 +12,6 @@ RSpec.describe Item, type: :model do
       end
     end
     context "商品情報が保存できない場合" do
-      it "画像がないと商品情報は保存できない" do
-        @item.image = ''
-        @item.valid?
-        expect(@item.errors.full_messages).to include("商品画像を入力してください")
-      end
       it "商品名がないと商品情報は保存できない" do
         @item.name = ''
         @item.valid?
