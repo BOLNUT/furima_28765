@@ -26,6 +26,7 @@ const pay = () => {
       exp_month: exp_month,
       exp_year: exp_year,
     };
+    console.log(card)
 
     Payjp.createToken(card, (status, response) => {
       if (status == 200) {
