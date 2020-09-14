@@ -12,7 +12,7 @@ const pay = () => {
     const cvcInput = document.getElementById("card-cvc").value
     const monthInput = document.getElementById("card-exp-month").value
     const yearInput = document.getElementById("card-exp-year").value
-    
+     
     //FormDataの取得した値をinteger型へ
     const number = parseInt(numberInput, 10)
     const cvc = parseInt(cvcInput, 10)
