@@ -1,6 +1,7 @@
 class PurchasesController < ApplicationController
   before_action :set_item, only: [:index, :create]
   before_action :move_to_index
+  before_action :authenticate_user!
 
   def index
     @purchase = ItemPurchase.new
@@ -32,7 +33,7 @@ class PurchasesController < ApplicationController
 
   def move_to_index
     unless user_signed_in?
-      redirect_to new_user_session
+      redirect_to new_user_session_path
     end
   end
 
