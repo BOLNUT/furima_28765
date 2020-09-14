@@ -1,6 +1,7 @@
 class PurchasesController < ApplicationController
   before_action :set_item, only: [:index, :create]
   before_action :move_to_index
+
   def index
     @purchase = ItemPurchase.new
   end
@@ -31,16 +32,9 @@ class PurchasesController < ApplicationController
 
   def move_to_index
     unless user_signed_in?
-      redirect_to root_path
+      redirect_to new_user_session
     end
   end
-
-  def correct_user
-    item = Item.find(params[:id])
-    if current_user.id != item.user_id
-    redirect_to root_path
-    end
- end
 
   def pay_item
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]  # PAY.JPテスト秘密鍵
